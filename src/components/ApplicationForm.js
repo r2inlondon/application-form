@@ -14,7 +14,7 @@ const ApplicationForm = () => {
     <div>
       <h2>Application</h2>
       <PersonalDetails setDetails={setDetails} />
-      <AddressDetails setAddressDetails={setAddressDetails} />
+      {details && <AddressDetails setAddressDetails={setAddressDetails} />}
     </div>
   );
 };
