@@ -1,5 +1,8 @@
 import React from "react";
 import ApplicationForm from "./components/ApplicationForm";
+import PersonalDetails from "./components/PersonalDetails";
+import AddressDetails from "./components/AddressDetails";
+
 import Navbar from "./components/Navbar";
 import {
   BrowserRouter,
@@ -16,6 +19,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<ApplicationForm />} />
+        <Route path="/personal" element={<PersonalDetails />} />
+        <Route path="/address" element={<AddressDetails />} />
       </Routes>
     </BrowserRouter>
   );
