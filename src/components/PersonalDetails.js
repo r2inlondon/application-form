@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 const PersonalDetails = (props) => {
-  const [fName, setfName] = useState("");
-  const [lName, setlName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
-    props.setDetails({ firtName: fName, lastName: lName });
+    props.setDetails({ firstName, lastName });
   };
 
   return (
@@ -16,20 +16,20 @@ const PersonalDetails = (props) => {
         <br />
         <input
           type="text"
-          id="fname"
-          name="fname"
-          value={fName}
-          onChange={(e) => setfName(e.target.value)}
+          id="firstName"
+          name="firstName"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
         />
         <br />
         <label>lastName Name</label>
         <br />
         <input
           type="text"
-          id="lname"
-          name="lname"
-          value={lName}
-          onChange={(e) => setlName(e.target.value)}
+          id="lastName"
+          name="lastName"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
         />
         <br />
         <input type="submit" value="Submit" />
