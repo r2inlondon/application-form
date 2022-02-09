@@ -2,20 +2,16 @@ import React, { useState } from "react";
 import PersonalDetails from "./PersonalDetails";
 
 const ApplicationForm = () => {
-  const [details, setDetails] = useState({ firstName: "", lastName: "" });
+  const [details, setDetails] = useState({});
 
-  function setName(firstName, lastName) {
-    console.log(firstName, lastName);
-
-    setDetails({ firstName, lastName });
-
-    // console.log("details state are:", details);
-  }
+  // function setName(firstName, lastName) {
+  //   setDetails({ firstName, lastName });
+  // }
 
   return (
     <div>
       <h2>Application</h2>
-      <PersonalDetails data={setName} />
+      <PersonalDetails setDetails={setDetails} />
     </div>
   );
 };
