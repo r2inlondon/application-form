@@ -3,18 +3,19 @@ import PersonalDetails from "./PersonalDetails";
 import AddressDetails from "./AddressDetails";
 
 const ApplicationForm = () => {
-  const [details, setDetails] = useState("");
+  const [details, setDetails] = useState({ active: true });
   const [addressDetails, setAddressDetails] = useState("");
 
-  // function setName(firstName, lastName) {
-  //   setDetails({ firstName, lastName });
-  // }
+  console.log(details);
 
   return (
     <div>
-      <h2>Application</h2>
-      <PersonalDetails setDetails={setDetails} />
-      {details && <AddressDetails setAddressDetails={setAddressDetails} />}
+      <div className="nav"></div>
+      <h3>Application</h3>
+      {details.active && <PersonalDetails setDetails={setDetails} />}
+      {!details.active && (
+        <AddressDetails setAddressDetails={setAddressDetails} />
+      )}
     </div>
   );
 };

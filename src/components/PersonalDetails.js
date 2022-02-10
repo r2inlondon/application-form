@@ -3,10 +3,11 @@ import React, { useState } from "react";
 const PersonalDetails = (props) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [active, setActive] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
-    props.setDetails({ firstName, lastName });
+    props.setDetails({ firstName, lastName, active: false });
   };
 
   return (
