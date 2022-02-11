@@ -7,7 +7,7 @@ const PersonalDetails = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    props.setDetails({ firstName, lastName, active: false });
+    props.setDetails({ firstName, lastName });
   };
 
   return (

@@ -10,7 +10,13 @@ const AddressDetails = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    props.setAddressDetails({ firstLine, secondLine, city, country, postcode });
+    props.setAddressDetails({
+      firstLine,
+      secondLine,
+      city,
+      country,
+      postcode
+    });
   };
 
   return (
