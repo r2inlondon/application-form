@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import FormContext from "./FormContext";
 
 const PersonalDetails = (props) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [active, setActive] = useState("");
+  const details = useContext(FormContext);
+
+  const [firstName, setFirstName] = useState(
+    details.step1.firstName ? details.step1.firstName : ""
+  );
+  const [lastName, setLastName] = useState(
+    details.step1.lastName ? details.step1.lastName : ""
+  );
+
+  console.log(details);
 
   const onSubmit = (e) => {
     e.preventDefault();

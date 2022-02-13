@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormContext from "./FormContext";
 import PersonalDetails from "./PersonalDetails";
 import AddressDetails from "./AddressDetails";
 import AboutUs from "./AboutUs";
@@ -110,9 +111,11 @@ const ApplicationForm = () => {
         )}
       </div>
       <h3>Application</h3>
-      {progress[0] && <PersonalDetails setDetails={step1} />}
-      {progress[1] && <AddressDetails setAddressDetails={step2} />}
-      {progress[2] && <AboutUs setAboutUs={step3} />}
+      <FormContext.Provider value={details}>
+        {progress[0] && <PersonalDetails setDetails={step1} />}
+        {progress[1] && <AddressDetails setAddressDetails={step2} />}
+        {progress[2] && <AboutUs setAboutUs={step3} />}
+      </FormContext.Provider>
     </div>
   );
 };
