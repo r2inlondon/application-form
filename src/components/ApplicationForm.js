@@ -19,9 +19,7 @@ const ApplicationForm = () => {
     },
   });
 
-  // const [addressDetails, setAddressDetails] = useState({ opened: false });
-  // const [about, setAbout] = useState({ opened: false });
-  const [progress, setProgress] = useState([]);
+  const [progress, setProgress] = useState([true, false, false]);
 
   const step1 = (info) => {
     const { firstName, lastName } = info;
@@ -29,7 +27,7 @@ const ApplicationForm = () => {
     setDetails((prevState) => ({
       step1: {
         ...prevState.step1,
-        active: false,
+        active: true,
         completed: true,
         firstName,
         lastName,
@@ -37,6 +35,8 @@ const ApplicationForm = () => {
       step2: { ...prevState.step2, active: true },
       step3: { ...prevState.step3 },
     }));
+
+    setProgress([false, true, false]);
   };
 
   const step2 = (info) => {
@@ -46,7 +46,7 @@ const ApplicationForm = () => {
       step1: { ...prevState.step1 },
       step2: {
         ...prevState.step2,
-        active: false,
+        active: true,
         completed: true,
         firstLine,
         secondLine,
@@ -56,6 +56,8 @@ const ApplicationForm = () => {
       },
       step3: { ...prevState.step3, active: true },
     }));
+
+    setProgress([false, false, true]);
   };
 
   const step3 = (info) => {
@@ -66,26 +68,51 @@ const ApplicationForm = () => {
       step2: { ...prevState.step2 },
       step3: {
         ...prevState.step3,
-        active: false,
+        active: true,
         completed: true,
         hear,
       },
     }));
+    setProgress([false, false, false]);
   };
 
-  console.log(progress);
+  const activeIt = (e) => {
+    const toActive = e.target.attributes.id.value;
+
+    const show = [false, false, false];
+
+    show[toActive] = true;
+
+    setProgress(show);
+
+    e.preventDefault();
+
+    console.log(toActive);
+  };
 
   return (
     <div>
       <div className="nav">
-        {details.step1.completed && <button key={1}>Personal Details</button>}
-        {details.step2.completed && <button key={2}>Home Address</button>}
-        {details.step3.completed && <button key={3}>Step 3</button>}
+        {details.step1.active && (
+          <button key={1} id={0} onClick={activeIt}>
+            Personal Details
+          </button>
+        )}
+        {details.step2.active && (
+          <button key={2} id={1} onClick={activeIt}>
+            Home Address
+          </button>
+        )}
+        {details.step3.active && (
+          <button key={3} id={2} onClick={activeIt}>
+            Step 3
+          </button>
+        )}
       </div>
       <h3>Application</h3>
-      {details.step1.active && <PersonalDetails setDetails={step1} />}
-      {details.step2.active && <AddressDetails setAddressDetails={step2} />}
-      {details.step3.active && <AboutUs setAboutUs={step3} />}
+      {progress[0] && <PersonalDetails setDetails={step1} />}
+      {progress[1] && <AddressDetails setAddressDetails={step2} />}
+      {progress[2] && <AboutUs setAboutUs={step3} />}
     </div>
   );
 };
