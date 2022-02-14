@@ -11,8 +11,6 @@ const PersonalDetails = (props) => {
     details.step1.lastName ? details.step1.lastName : ""
   );
 
-  console.log(details);
-
   const onSubmit = (e) => {
     e.preventDefault();
     props.setDetails({ firstName, lastName });
@@ -31,7 +29,7 @@ const PersonalDetails = (props) => {
           onChange={(e) => setFirstName(e.target.value)}
         />
         <br />
-        <label>lastName Name</label>
+        <label>last Name</label>
         <br />
         <input
           type="text"

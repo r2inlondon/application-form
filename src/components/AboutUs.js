@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import FormContext from "./FormContext";
 
 const AboutUs = (props) => {
-  const [hear, setHear] = useState("");
+  const details = useContext(FormContext);
+  const [hear, setHear] = useState(
+    details.step3.hear ? details.step3.hear : ""
+  );
 
   const onSubmit = (e) => {
     e.preventDefault();

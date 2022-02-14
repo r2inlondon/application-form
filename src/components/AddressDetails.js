@@ -1,11 +1,23 @@
-import react, { useState } from "react";
+import react, { useState, useContext } from "react";
+import FormContext from "./FormContext";
 
 const AddressDetails = (props) => {
-  const [firstLine, setFirstLine] = useState("");
-  const [secondLine, setSecondLine] = useState("");
-  const [city, setCity] = useState("");
-  const [country, setCountry] = useState("");
-  const [postcode, setPostcode] = useState("");
+  const details = useContext(FormContext);
+  const [firstLine, setFirstLine] = useState(
+    details.step2.firstLine ? details.step2.firstLine : ""
+  );
+  const [secondLine, setSecondLine] = useState(
+    details.step2.secondLine ? details.step2.secondLine : ""
+  );
+  const [city, setCity] = useState(
+    details.step2.city ? details.step2.city : ""
+  );
+  const [country, setCountry] = useState(
+    details.step2.country ? details.step2.country : ""
+  );
+  const [postcode, setPostcode] = useState(
+    details.step2.postcode ? details.step2.postcode : ""
+  );
 
   const onSubmit = (e) => {
     e.preventDefault();
