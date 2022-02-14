@@ -36,7 +36,7 @@ const ApplicationForm = () => {
   };
 
   const step1 = (info) => {
-    const { firstName, lastName } = info;
+    const { firstName, lastName, gender, mobile, email } = info;
 
     setDetails((prevState) => ({
       step1: {
@@ -44,6 +44,9 @@ const ApplicationForm = () => {
         completed: true,
         firstName,
         lastName,
+        gender,
+        mobile,
+        email,
       },
       step2: { ...prevState.step2, active: true },
       step3: { ...prevState.step3 },
