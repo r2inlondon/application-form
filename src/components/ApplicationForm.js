@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FormContext from "./FormContext";
+import FormContext, { initialState } from "./FormContext";
 import TheStart from "./TheStart";
 import PersonalDetails from "./PersonalDetails";
 import AddressDetails from "./AddressDetails";
@@ -8,28 +8,7 @@ import Summary from "./Summary";
 import TheEnd from "./TheEnd";
 
 const ApplicationForm = () => {
-  const [details, setDetails] = useState({
-    step1: {
-      section: "Personal Details",
-      active: false,
-      completed: false
-    },
-    step2: {
-      section: "Address Details",
-      active: false,
-      completed: false
-    },
-    step3: {
-      section: "Survey",
-      active: false,
-      completed: false
-    },
-    step4: {
-      section: "Summary",
-      active: false,
-      completed: false
-    }
-  });
+  const [details, setDetails] = useState(initialState);
 
   const [progress, setProgress] = useState([
     true,
@@ -37,7 +16,7 @@ const ApplicationForm = () => {
     false,
     false,
     false,
-    false
+    false,
   ]);
 
   const step0 = (e) => {
@@ -46,11 +25,11 @@ const ApplicationForm = () => {
     setDetails((prevState) => ({
       step1: {
         ...prevState.step1,
-        active: true
+        active: true,
       },
       step2: { ...prevState.step2 },
       step3: { ...prevState.step3 },
-      step4: { ...prevState.step4 }
+      step4: { ...prevState.step4 },
     }));
 
     setProgress([false, true, false, false, false, false]);
@@ -64,11 +43,11 @@ const ApplicationForm = () => {
         ...prevState.step1,
         completed: true,
         firstName,
-        lastName
+        lastName,
       },
       step2: { ...prevState.step2, active: true },
       step3: { ...prevState.step3 },
-      step4: { ...prevState.step4 }
+      step4: { ...prevState.step4 },
     }));
 
     setProgress([false, false, true, false, false, false]);
@@ -86,10 +65,10 @@ const ApplicationForm = () => {
         secondLine,
         city,
         country,
-        postcode
+        postcode,
       },
       step3: { ...prevState.step3, active: true },
-      step4: { ...prevState.step4 }
+      step4: { ...prevState.step4 },
     }));
 
     setProgress([false, false, false, true, false, false]);
@@ -104,9 +83,9 @@ const ApplicationForm = () => {
       step3: {
         ...prevState.step3,
         completed: true,
-        hear
+        hear,
       },
-      step4: { ...prevState.step4, active: true }
+      step4: { ...prevState.step4, active: true },
     }));
     setProgress([false, false, false, false, true, false]);
   };
@@ -114,8 +93,8 @@ const ApplicationForm = () => {
   const step4 = (e) => {
     const endForm = e.target;
 
-    setProgress([false, false, false, false, false, false]);
-    setDetails("");
+    setProgress([false, false, false, false, false, true]);
+    setDetails(initialState);
   };
 
   const activeIt = (e) => {
