@@ -11,11 +11,17 @@ const PersonalDetails = (props) => {
     details.step1.lastName ? details.step1.lastName : ""
   );
 
-  const [gender, setGender] = useState("");
+  const [gender, setGender] = useState(
+    details.step1.gender ? details.step1.gender : ""
+  );
 
-  const [mobile, setMobile] = useState("");
+  const [mobile, setMobile] = useState(
+    details.step1.mobile ? details.step1.mobile : ""
+  );
 
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(
+    details.step1.email ? details.step1.email : ""
+  );
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -80,7 +86,8 @@ const PersonalDetails = (props) => {
         <label>Email</label>
         <br />
         <input
-          type="text"
+          type="email"
+          required
           id="email"
           name="email"
           value={email}

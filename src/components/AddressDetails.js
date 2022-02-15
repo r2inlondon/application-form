@@ -41,6 +41,8 @@ const AddressDetails = (props) => {
           type="text"
           id="firstLine"
           name="firstLine"
+          minLength={4}
+          required
           value={firstLine}
           onChange={(e) => setFirstLine(e.target.value)}
           ype="text"
@@ -62,6 +64,8 @@ const AddressDetails = (props) => {
         <input
           type="text"
           id=" city"
+          minLength={4}
+          required
           name="city"
           value={city}
           onChange={(e) => setCity(e.target.value)}
@@ -73,6 +77,8 @@ const AddressDetails = (props) => {
         <input
           type="text"
           id=" postcode"
+          minLength={4}
+          required
           name="postcode"
           value={postcode}
           onChange={(e) => setPostcode(e.target.value)}
@@ -84,6 +90,8 @@ const AddressDetails = (props) => {
         <input
           type="text"
           id=" country"
+          minLength={4}
+          required
           name="country"
           value={country}
           onChange={(e) => setCountry(e.target.value)}
