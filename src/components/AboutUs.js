@@ -7,11 +7,11 @@ const AboutUs = (props) => {
     details.step3.hear ? details.step3.hear : "Gumtree"
   );
   const [pet, setPet] = useState(
-    details.step3.pet ? details.step3.pet : "dog person"
+    details.step3.pet ? details.step3.pet : "Dog person"
   );
 
   const [food, setFood] = useState(
-    details.step3.food ? details.step3.food : "Vegetables"
+    details.step3.food ? details.step3.food : "No"
   );
 
   const onSubmit = (e) => {
@@ -29,16 +29,16 @@ const AboutUs = (props) => {
           value={hear}
           onChange={(e) => setHear(e.target.value)}
         >
-          <option value="linkedin">Linkedin</option>
-          <option value="gumtree">Gumtree</option>
-          <option value="newspaper">Newspaper</option>
+          <option value="Linkedin">Linkedin</option>
+          <option value="Gumtree">Gumtree</option>
+          <option value="Newspaper">Newspaper</option>
         </select>
         <br />
         <label>Would you say that you are a: </label>
         <br />
         <select id="pet" value={pet} onChange={(e) => setPet(e.target.value)}>
-          <option value="dog person">Dog Person</option>
-          <option value="cat person">Cat Person</option>
+          <option value="Dog person">Dog Person</option>
+          <option value="Cat person">Cat Person</option>
         </select>
         <br />
         <label>Are you a vegetarian ? </label>
@@ -48,8 +48,8 @@ const AboutUs = (props) => {
           value={food}
           onChange={(e) => setFood(e.target.value)}
         >
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
         </select>
         <br />
         <input type="submit" value="Submit"></input>

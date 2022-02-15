@@ -6,6 +6,10 @@ const Summary = (props) => {
 
   return (
     <div className="summary">
+      <p>
+        Click on the progress bar above if you need to go back to any of the
+        sections to amend your info
+      </p>
       <div className="personal-details">
         <h2>{details.step1.section}</h2>
         <p>First name:</p>
@@ -25,8 +29,18 @@ const Summary = (props) => {
           </div>
         )}
         <p>City:</p> <p>{details.step2.city}</p>
+        <p>PostCode:</p> <p>{details.step2.postcode}</p>
         <p>Country:</p> <p>{details.step2.country}</p>
       </div>
+      <div className="survey">
+        <p>Where did you hear about us?</p>
+        <p>{details.step3.hear}</p>
+        <p>Would you say that you are: </p>
+        <p>{details.step3.pet}</p>
+        <p>Are you vegetarian? </p>
+        <p>{details.step3.food}</p>
+      </div>
+      <p>Submit the form if you are happy info.</p>
       <button onClick={props.endForm}>Submit Form</button>
     </div>
   );
