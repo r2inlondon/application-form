@@ -1,11 +1,11 @@
 import React from "react";
 
 const TheStart = (props) => (
-  <div className="the-start bg">
+  <div className="the-start">
     <div className="start-txt">
-      <p>Job aplication form coded with React</p>
+      <p>Job application form coded with React</p>
       <button className="the-button" onClick={props.TheStart}>
-        Start
+        START
       </button>
     </div>
   </div>

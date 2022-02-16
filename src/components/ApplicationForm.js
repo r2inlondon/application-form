@@ -6,6 +6,7 @@ import AddressDetails from "./AddressDetails";
 import AboutUs from "./AboutUs";
 import Summary from "./Summary";
 import TheEnd from "./TheEnd";
+import { expandBackground } from "../js-functions/transparent-bg";
 
 const ApplicationForm = () => {
   const [details, setDetails] = useState(initialState);
@@ -20,6 +21,7 @@ const ApplicationForm = () => {
   ]);
 
   const step0 = (e) => {
+    expandBackground();
     setDetails((prevState) => ({
       step1: {
         ...prevState.step1,
@@ -111,7 +113,7 @@ const ApplicationForm = () => {
   };
 
   return (
-    <div>
+    <div className="bg-small">
       <div className="nav">
         {details.step1.active && (
           <button key={1} id={1} className={"step1"} onClick={activeIt}>
@@ -134,14 +136,17 @@ const ApplicationForm = () => {
           </button>
         )}
       </div>
-      {progress[0] && <TheStart TheStart={step0} />}
-      <FormContext.Provider value={details}>
-        {progress[1] && <PersonalDetails setDetails={step1} />}
-        {progress[2] && <AddressDetails setAddressDetails={step2} />}
-        {progress[3] && <AboutUs setAboutUs={step3} />}
-        {progress[4] && <Summary endForm={step4} />}
-      </FormContext.Provider>
-      {progress[5] && <TheEnd />}
+
+      <div>
+        {progress[0] && <TheStart TheStart={step0} />}
+        <FormContext.Provider value={details}>
+          {progress[1] && <PersonalDetails setDetails={step1} />}
+          {progress[2] && <AddressDetails setAddressDetails={step2} />}
+          {progress[3] && <AboutUs setAboutUs={step3} />}
+          {progress[4] && <Summary endForm={step4} />}
+        </FormContext.Provider>
+        {progress[5] && <TheEnd />}
+      </div>
     </div>
   );
 };

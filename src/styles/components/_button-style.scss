@@ -8,9 +8,11 @@
   text-decoration: none;
   color: white;
   font-size: $font-size-regular;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-.button:hover {
+.the-button:hover {
   background: none;
   color: #3e4257;
 }
