@@ -11,3 +11,8 @@ html {
   //set rem to 10px
   font-size: 62.5%;
 }
+
+body {
+  font-family: $font-main;
+  font-size: $font-size-regular;
+}
