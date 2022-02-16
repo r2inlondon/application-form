@@ -31,50 +31,60 @@ const PersonalDetails = (props) => {
   return (
     <div className="personal-d">
       <form onSubmit={onSubmit}>
-        <label>First Name</label>
-        <br />
-        <input
-          type="text"
-          required
-          id="firstName"
-          name="firstName"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <br />
-        <label>last Name</label>
-        <br />
-        <input
-          type="text"
-          required
-          id="lastName"
-          name="lastName"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-        <br />
-        <p>Gender</p>
-        <label>
-          <input
-            type="radio"
-            checked={gender === "male"}
-            onChange={(e) => setGender("male")}
-          />
-          Male
-        </label>
-        <label>
-          <input
-            type="radio"
-            checked={gender === "female"}
-            onChange={(e) => setGender("female")}
-          />
-          Female
-        </label>
+        <div className="names">
+          <div className="first-name">
+            <label>First Name</label>
+            <br />
+            <input
+              type="text"
+              required
+              id="firstName"
+              name="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </div>
+
+          <div className="last-name">
+            <label>last Name</label>
+            <br />
+            <input
+              type="text"
+              required
+              id="lastName"
+              name="lastName"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className="radio">
+          <p>Gender</p>
+          <label>
+            <input
+              className="radio-b"
+              type="radio"
+              checked={gender === "male"}
+              onChange={(e) => setGender("male")}
+            />
+            Male
+          </label>
+          <label>
+            <input
+              className="radio-b"
+              type="radio"
+              checked={gender === "female"}
+              onChange={(e) => setGender("female")}
+            />
+            Female
+          </label>
+        </div>
         <br />
         <label>Mobile</label>
         <br />
         <input
-          type="txt"
+          type="text"
           required
           min="10"
           id="mobile"
@@ -94,7 +104,9 @@ const PersonalDetails = (props) => {
           onChange={(e) => setEmail(e.target.value)}
         />
         <br />
-        <input type="submit" value="Submit" />
+        <div className="next">
+          <input type="submit" value="NEXT" className="the-button" />
+        </div>
       </form>
     </div>
   );

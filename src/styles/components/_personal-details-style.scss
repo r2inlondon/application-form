@@ -1,0 +1,25 @@
+.personal-d {
+  width: $component-width;
+}
+
+.names {
+  display: flex;
+  justify-content: space-between;
+}
+
+.first-name,
+.last-name {
+  width: 17rem;
+}
+
+.radio {
+  text-align: center;
+}
+
+.radio p {
+  margin: 1rem 0;
+}
+
+.radio-b {
+  width: 3rem;
+}
