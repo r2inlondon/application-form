@@ -25,4 +25,41 @@ export const initialState = {
   },
 };
 
+export const sampleState = {
+  step1: {
+    active: true,
+    completed: true,
+    email: "r2inlondon@gmail.com",
+
+    firstName: "Arturo",
+    gender: "male",
+
+    lastName: "Quiroz",
+    mobile: "asfsdaf",
+    section: "Personal Details",
+  },
+  step2: {
+    active: true,
+    city: "London",
+    completed: true,
+    country: "UK",
+    firstLine: "12341234",
+    postcode: "se173hb",
+    secondLine: "12341234",
+    section: "Address Details",
+  },
+  step3: {
+    completed: true,
+    food: "No",
+    hear: "Gumtree",
+    pet: "Dog person",
+    section: "Survey",
+  },
+  step4: {
+    section: "Summary",
+    active: false,
+    completed: false,
+  },
+};
+
 export default FormContext;

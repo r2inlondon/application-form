@@ -10,8 +10,8 @@
 }
 
 .bg-small {
-  width: 40rem;
-  height: 30rem;
+  width: 80rem;
+  height: 60rem;
   background-color: $transparent-background;
   border-radius: 1%;
 }
@@ -33,6 +33,7 @@
 .inputs-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 1rem;
 }
 
 .two-inputs {

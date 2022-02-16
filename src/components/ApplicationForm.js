@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FormContext, { initialState } from "./FormContext";
+import FormContext, { initialState, sampleState } from "./FormContext";
 import TheStart from "./TheStart";
 import PersonalDetails from "./PersonalDetails";
 import AddressDetails from "./AddressDetails";
@@ -9,14 +9,14 @@ import TheEnd from "./TheEnd";
 import { expandBackground } from "../js-functions/transparent-bg";
 
 const ApplicationForm = () => {
-  const [details, setDetails] = useState(initialState);
+  const [details, setDetails] = useState(sampleState);
 
   const [progress, setProgress] = useState([
+    false,
+    false,
+    false,
+    false,
     true,
-    false,
-    false,
-    false,
-    false,
     false,
   ]);
 

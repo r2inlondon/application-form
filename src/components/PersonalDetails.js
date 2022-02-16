@@ -80,7 +80,7 @@ const PersonalDetails = (props) => {
             Female
           </label>
         </div>
-        <br />
+
         <label>Mobile</label>
         <br />
         <input
