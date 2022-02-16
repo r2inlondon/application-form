@@ -22,3 +22,10 @@
   background-color: $transparent-background;
   border-radius: 1%;
 }
+
+.components-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

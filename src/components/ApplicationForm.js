@@ -137,7 +137,7 @@ const ApplicationForm = () => {
         )}
       </div>
 
-      <div>
+      <div className="components-container">
         {progress[0] && <TheStart TheStart={step0} />}
         <FormContext.Provider value={details}>
           {progress[1] && <PersonalDetails setDetails={step1} />}
