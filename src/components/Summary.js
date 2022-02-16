@@ -40,7 +40,6 @@ const Summary = (props) => {
         <p>Are you vegetarian? </p>
         <p>{details.step3.food}</p>
       </div>
-      <p>Submit the form if you are happy info.</p>
       <button onClick={props.endForm}>Submit Form</button>
     </div>
   );

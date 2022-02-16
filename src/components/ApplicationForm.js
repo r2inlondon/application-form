@@ -16,20 +16,18 @@ const ApplicationForm = () => {
     false,
     false,
     false,
-    false
+    false,
   ]);
 
   const step0 = (e) => {
-    const endForm = e.target;
-
     setDetails((prevState) => ({
       step1: {
         ...prevState.step1,
-        active: true
+        active: true,
       },
       step2: { ...prevState.step2 },
       step3: { ...prevState.step3 },
-      step4: { ...prevState.step4 }
+      step4: { ...prevState.step4 },
     }));
 
     setProgress([false, true, false, false, false, false]);
@@ -46,11 +44,11 @@ const ApplicationForm = () => {
         lastName,
         gender,
         mobile,
-        email
+        email,
       },
       step2: { ...prevState.step2, active: true },
       step3: { ...prevState.step3 },
-      step4: { ...prevState.step4 }
+      step4: { ...prevState.step4 },
     }));
 
     setProgress([false, false, true, false, false, false]);
@@ -68,10 +66,10 @@ const ApplicationForm = () => {
         secondLine,
         city,
         country,
-        postcode
+        postcode,
       },
       step3: { ...prevState.step3, active: true },
-      step4: { ...prevState.step4 }
+      step4: { ...prevState.step4 },
     }));
 
     setProgress([false, false, false, true, false, false]);
@@ -88,16 +86,14 @@ const ApplicationForm = () => {
         completed: true,
         hear,
         pet,
-        food
+        food,
       },
-      step4: { ...prevState.step4, active: true }
+      step4: { ...prevState.step4, active: true },
     }));
     setProgress([false, false, false, false, true, false]);
   };
 
   const step4 = (e) => {
-    const endForm = e.target;
-
     setProgress([false, false, false, false, false, true]);
     setDetails(initialState);
   };
@@ -138,7 +134,6 @@ const ApplicationForm = () => {
           </button>
         )}
       </div>
-      <h3>Application</h3>
       {progress[0] && <TheStart TheStart={step0} />}
       <FormContext.Provider value={details}>
         {progress[1] && <PersonalDetails setDetails={step1} />}
