@@ -33,7 +33,6 @@ const AddressDetails = (props) => {
 
   return (
     <div className="address-form">
-      <h3>Personal address</h3>
       <form onSubmit={onSubmit}>
         <label>Address first line</label>
         <br />
@@ -59,31 +58,37 @@ const AddressDetails = (props) => {
           ype="text"
         />
         <br />
-        <label>City</label>
-        <br />
-        <input
-          type="text"
-          id=" city"
-          minLength={4}
-          required
-          name="city"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          ype="text"
-        />
-        <br />
-        <label>Postcode</label>
-        <br />
-        <input
-          type="text"
-          id=" postcode"
-          minLength={4}
-          required
-          name="postcode"
-          value={postcode}
-          onChange={(e) => setPostcode(e.target.value)}
-          ype="text"
-        />
+        <div className="inputs-container">
+          <div className="two-inputs">
+            <label>City</label>
+            <br />
+            <input
+              type="text"
+              id=" city"
+              minLength={4}
+              required
+              name="city"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              ype="text"
+            />
+            <br />
+          </div>
+          <div className="two-inputs">
+            <label>Postcode</label>
+            <br />
+            <input
+              type="text"
+              id=" postcode"
+              minLength={4}
+              required
+              name="postcode"
+              value={postcode}
+              onChange={(e) => setPostcode(e.target.value)}
+              ype="text"
+            />
+          </div>
+        </div>
         <br />
         <label>Country</label>
         <br />
@@ -100,7 +105,7 @@ const AddressDetails = (props) => {
         <br />
 
         <div className="next">
-          <input className="the-button" type="submit" value="SUBMIT" />
+          <input className="the-button" type="submit" value="NEXT" />
         </div>
       </form>
     </div>

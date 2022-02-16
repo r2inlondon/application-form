@@ -31,8 +31,8 @@ const PersonalDetails = (props) => {
   return (
     <div className="personal-d">
       <form onSubmit={onSubmit}>
-        <div className="names">
-          <div className="first-name">
+        <div className="inputs-container">
+          <div className="two-inputs">
             <label>First Name</label>
             <br />
             <input
@@ -45,7 +45,7 @@ const PersonalDetails = (props) => {
             />
           </div>
 
-          <div className="last-name">
+          <div className="two-inputs">
             <label>last Name</label>
             <br />
             <input
