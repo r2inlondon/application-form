@@ -27,7 +27,7 @@ const AddressDetails = (props) => {
       secondLine,
       city,
       country,
-      postcode
+      postcode,
     });
   };
 
@@ -99,7 +99,9 @@ const AddressDetails = (props) => {
         />
         <br />
 
-        <input type="submit" value="Submit" />
+        <div className="next">
+          <input className="the-button" type="submit" value="SUBMIT" />
+        </div>
       </form>
     </div>
   );
