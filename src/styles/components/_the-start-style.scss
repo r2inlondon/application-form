@@ -1,9 +1,15 @@
 .the-start {
-  width: 40rem;
-  height: 40rem;
-  background-color: $transparent-background;
-  border-radius: 1%;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+}
+
+.the-start p {
+  margin: 1rem 0;
+  font-size: $font-size-bigish;
+}
+
+.the-start button {
+  margin-top: 2rem;
 }
