@@ -6,23 +6,23 @@ export const initialState = {
   step1: {
     section: "Personal Details",
     active: false,
-    completed: false,
+    completed: false
   },
   step2: {
-    section: "Address Details",
+    section: "Home Address",
     active: false,
-    completed: false,
+    completed: false
   },
   step3: {
     section: "Survey",
     active: false,
-    completed: false,
+    completed: false
   },
   step4: {
     section: "Summary",
     active: false,
-    completed: false,
-  },
+    completed: false
+  }
 };
 
 export const sampleState = {
@@ -36,30 +36,30 @@ export const sampleState = {
 
     lastName: "Quiroz",
     mobile: "asfsdaf",
-    section: "Personal Details",
+    section: "Personal Details"
   },
   step2: {
     active: true,
-    city: "London",
+    city: "Guadalajara",
     completed: true,
     country: "UK",
-    firstLine: "12341234",
-    postcode: "se173hb",
-    secondLine: "12341234",
-    section: "Address Details",
+    firstLine: "32 Vauxhal Bridge Road",
+    postcode: "SE173HB",
+    secondLine: "11-15 Macloud Street",
+    section: "Home Address"
   },
   step3: {
     completed: true,
     food: "No",
     hear: "Gumtree",
     pet: "Dog person",
-    section: "Survey",
+    section: "Survey"
   },
   step4: {
     section: "Summary",
     active: false,
-    completed: false,
-  },
+    completed: false
+  }
 };
 
 export default FormContext;

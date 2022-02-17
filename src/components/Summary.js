@@ -22,36 +22,53 @@ const Summary = (props) => {
             <p className="field-title">Last name:</p>
             <p>{details.step1.lastName}</p>
           </div>
-        </div>
-        <div className="inputs-container">
-          <div className="two-inputs">
+          <div className="">
             <p className="field-title">Gender:</p>
             <p>{details.step1.gender}</p>
           </div>
+        </div>
+        <div className="inputs-container">
           <div className="two-inputs">
             <p className="field-title">Mobile:</p>
             <p>{details.step1.mobile}</p>
           </div>
-        </div>
-        <div className="inputs-container">
-          <p className="field-title">Email:</p>
-          <p>{details.step1.email}</p>
+          <div className="">
+            <p className="field-title">Email:</p>
+            <p>{details.step1.email}</p>
+          </div>
         </div>
       </div>
 
+      <h2 className="summary-title"> {details.step2.section}</h2>
+      <div className="black-line"></div>
       <div className="address">
-        <h2> {details.step2.section}</h2>
-        <p>Address first line</p>
-        <p>{details.step2.firstLine}</p>
-        {details.step2.firstLine && (
-          <div>
-            <p>Address second line</p>
+        <div className="inputs-container">
+          <div className="two-inputs">
+            <p className="field-title">1st line:</p>
             <p>{details.step2.firstLine}</p>
           </div>
-        )}
-        <p>City:</p> <p>{details.step2.city}</p>
-        <p>PostCode:</p> <p>{details.step2.postcode}</p>
-        <p>Country:</p> <p>{details.step2.country}</p>
+          {details.step2.firstLine && (
+            <div>
+              <div className="two-inputs">
+                <p className="field-title">2nd line:</p>
+                <p>{details.step2.secondLine}</p>
+              </div>
+            </div>
+          )}
+        </div>
+        <div className="inputs-container">
+          <div className="two-inputs">
+            <p className="field-title">PostCode:</p>{" "}
+            <p>{details.step2.postcode}</p>
+          </div>
+          <div className="two-inputs">
+            <p className="field-title">City:</p> <p>{details.step2.city}</p>
+          </div>
+          <div className="two-inputs">
+            <p className="field-title">Country:</p>
+            <p>{details.step2.country}</p>
+          </div>
+        </div>
       </div>
       <div className="survey">
         <p>Where did you hear about us?</p>
@@ -61,7 +78,11 @@ const Summary = (props) => {
         <p>Are you vegetarian? </p>
         <p>{details.step3.food}</p>
       </div>
-      <button onClick={props.endForm}>Submit Form</button>
+      <div className="next">
+        <button className="the-button" onClick={props.endForm}>
+          Submit Form
+        </button>
+      </div>
     </div>
   );
 };
