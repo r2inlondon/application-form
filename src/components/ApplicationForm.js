@@ -115,17 +115,17 @@ const ApplicationForm = () => {
 
   return (
     <div className="bg-small">
-      <div className="components-container">
-        {progress[0] && <TheStart TheStart={step0} />}
-        <FormContext.Provider value={details}>
-          <ProgressNav activeIt={activeIt} />
+      {progress[0] && <TheStart TheStart={step0} />}
+      <FormContext.Provider value={details}>
+        <ProgressNav activeIt={activeIt} />
+        <div className="components-container">
           {progress[1] && <PersonalDetails setDetails={step1} />}
           {progress[2] && <AddressDetails setAddressDetails={step2} />}
           {progress[3] && <AboutUs setAboutUs={step3} />}
           {progress[4] && <Summary endForm={step4} />}
-        </FormContext.Provider>
-        {progress[5] && <TheEnd />}
-      </div>
+        </div>
+      </FormContext.Provider>
+      {progress[5] && <TheEnd />}
     </div>
   );
 };
