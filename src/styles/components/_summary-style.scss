@@ -1,0 +1,19 @@
+.summary{
+  width: $component-width;
+}
+
+.summary-title{
+  margin-top: 1rem;
+  font-size: $font-size-regular;
+  font-weight: bold;
+}
+
+.field-title{
+  font-weight: bold;
+}
+
+.black-line{
+  width: 100%;
+  border-bottom: $black-line;
+  opacity: 0.6;
+}

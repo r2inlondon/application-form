@@ -10,18 +10,33 @@ const Summary = (props) => {
         Click on the progress bar above if you need to go back to any of the
         sections to amend your info
       </p>
+      <p className="summary-title">{details.step1.section}</p>
+      <div className="black-line"></div>
       <div className="personal-details">
-        <h2>{details.step1.section}</h2>
-        <p>First name:</p>
-        <p>{details.step1.firstName}</p>
-        <p>Last name:</p>
-        <p>{details.step1.lastName}</p>
-        <p>Gender:</p>
-        <p>{details.step1.gender}</p>
-        <p>Mobile:</p>
-        <p>{details.step1.mobile}</p>
-        <p>Email:</p>
-        <p>{details.step1.email}</p>
+        <div className="inputs-container">
+          <div className="two-inputs">
+            <p className="field-title">First name:</p>
+            <p>{details.step1.firstName}</p>
+          </div>
+          <div className="two-inputs">
+            <p className="field-title">Last name:</p>
+            <p>{details.step1.lastName}</p>
+          </div>
+        </div>
+        <div className="inputs-container">
+          <div className="two-inputs">
+            <p className="field-title">Gender:</p>
+            <p>{details.step1.gender}</p>
+          </div>
+          <div className="two-inputs">
+            <p className="field-title">Mobile:</p>
+            <p>{details.step1.mobile}</p>
+          </div>
+        </div>
+        <div className="inputs-container">
+          <p className="field-title">Email:</p>
+          <p>{details.step1.email}</p>
+        </div>
       </div>
 
       <div className="address">
