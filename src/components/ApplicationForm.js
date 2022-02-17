@@ -9,15 +9,15 @@ import TheEnd from "./TheEnd";
 import { expandBackground } from "../js-functions/transparent-bg";
 
 const ApplicationForm = () => {
-  const [details, setDetails] = useState(sampleState);
+  const [details, setDetails] = useState(initialState);
 
   const [progress, setProgress] = useState([
-    false,
-    false,
-    false,
-    false,
     true,
     false,
+    false,
+    false,
+    false,
+    false
   ]);
 
   const step0 = (e) => {
@@ -25,11 +25,11 @@ const ApplicationForm = () => {
     setDetails((prevState) => ({
       step1: {
         ...prevState.step1,
-        active: true,
+        active: true
       },
       step2: { ...prevState.step2 },
       step3: { ...prevState.step3 },
-      step4: { ...prevState.step4 },
+      step4: { ...prevState.step4 }
     }));
 
     setProgress([false, true, false, false, false, false]);
@@ -46,11 +46,11 @@ const ApplicationForm = () => {
         lastName,
         gender,
         mobile,
-        email,
+        email
       },
       step2: { ...prevState.step2, active: true },
       step3: { ...prevState.step3 },
-      step4: { ...prevState.step4 },
+      step4: { ...prevState.step4 }
     }));
 
     setProgress([false, false, true, false, false, false]);
@@ -68,10 +68,10 @@ const ApplicationForm = () => {
         secondLine,
         city,
         country,
-        postcode,
+        postcode
       },
       step3: { ...prevState.step3, active: true },
-      step4: { ...prevState.step4 },
+      step4: { ...prevState.step4 }
     }));
 
     setProgress([false, false, false, true, false, false]);
@@ -88,9 +88,9 @@ const ApplicationForm = () => {
         completed: true,
         hear,
         pet,
-        food,
+        food
       },
-      step4: { ...prevState.step4, active: true },
+      step4: { ...prevState.step4, active: true }
     }));
     setProgress([false, false, false, false, true, false]);
   };
