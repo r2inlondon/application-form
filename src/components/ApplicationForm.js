@@ -97,6 +97,7 @@ const ApplicationForm = () => {
   };
 
   const step4 = (e) => {
+    expandBackground();
     setProgress([false, false, false, false, false, true]);
     setDetails(initialState);
   };
