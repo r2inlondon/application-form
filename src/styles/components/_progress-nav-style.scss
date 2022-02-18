@@ -1,14 +1,61 @@
-// .steps {
-//   /* background-color: rgb(128, 128, 128, 0.6); */
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 50%;
-//   border: solid 2px rgb(128, 128, 128, 0.6);
-// }
+.nav{
+  margin: auto;
+  width: 400px;
+  height: 100px;
+  border: solid 1px black;
+}
 
-.step1 {
+.progress{  
+  width: 100%;
+  margin-top: 5px;
+  height: 45px;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-step {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: rgb(154, 208, 236);
+  border: 2px solid rgb(154, 208, 236);
+  border-radius: 50%;
+  text-decoration: none;  
+  font-size: $font-size-regular;
+ 
+}
+
+.steps {
+  /* background-color: rgb(128, 128, 128, 0.6); */
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  border: 1px solid rgb(154, 208, 236);
+}
+
+.line {
+  width: 60px;
+  height: 2px;
   background-color: rgb(154, 208, 236);
 }
+
+.progress-txt-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.progress-txt {
+  width: 76px;
+  height: 40px;
+  text-align: center;
+}
+
+// .step1 {
+//   width: 40px;
+//   height: 40px;
+//   border-radius: 50%;
+//   background-color: rgb(154, 208, 236);
+// }
