@@ -32,16 +32,14 @@ const ProgressNav = ({ activeIt }) => {
             <div className="line"></div>
             <div className="steps">
               {details.step3.active && (
-                <button key={3} id={3} className="button-step" onClick={activeIt}>
-                  {details.step3.section}
+                <button key={3} id={3} className="button-step" onClick={activeIt}>                  
                 </button>
               )}
             </div>
             <div className="line"></div>
             <div className="steps">
               {details.step4.active && (
-                <button key={4} id={4} className="button-step" onClick={activeIt}>
-                  {details.step4.section}
+                <button key={4} id={4} className="button-step" onClick={activeIt}>                  
                 </button>
               )}
             </div>

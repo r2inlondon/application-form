@@ -1,8 +1,8 @@
 .nav{
   margin: auto;
+  padding-top: 1rem;
   width: 400px;
-  height: 100px;
-  border: solid 1px black;
+  height: 100px;  
 }
 
 .progress{  
@@ -51,6 +51,8 @@
   width: 76px;
   height: 40px;
   text-align: center;
+  font-size: $font-size-small;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 // .step1 {
