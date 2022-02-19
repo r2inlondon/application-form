@@ -33,6 +33,10 @@
   background: $steps-color;
   border: none;
   border-radius: 50%;
+  &:hover {
+    transition-duration: 0.3s;
+    transform: scale(1.2);
+  }
 }
 
 .line {
