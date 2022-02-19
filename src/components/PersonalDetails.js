@@ -46,7 +46,7 @@ const PersonalDetails = (props) => {
           </div>
 
           <div className="two-inputs">
-            <label>last Name</label>
+            <label>Last Name</label>
             <br />
             <input
               type="text"
