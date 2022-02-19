@@ -117,6 +117,7 @@ const ApplicationForm = () => {
   return (
     <div className="bg-small">
       {progress[0] && <TheStart TheStart={step0} />}
+      {progress[5] && <TheEnd />}
       <FormContext.Provider value={details}>
         <ProgressNav activeIt={activeIt} />
         <div className="components-container">
@@ -126,7 +127,6 @@ const ApplicationForm = () => {
           {progress[4] && <Summary endForm={step4} />}
         </div>
       </FormContext.Provider>
-      {progress[5] && <TheEnd />}
     </div>
   );
 };
