@@ -23,49 +23,56 @@ const AboutUs = (props) => {
     <div className="about-us">
       <form onSubmit={onSubmit}>
         <div className="options-container">
-          <div className="survey-txt">
-            <label>How did you hear about us?</label>
-          </div>
-          <div className="select">
-            <select
-              id="select"
-              value={hear}
-              onChange={(e) => setHear(e.target.value)}
-            >
-              <option value="Linkedin">Linkedin</option>
-              <option value="Gumtree">Gumtree</option>
-              <option value="Newspaper">Newspaper</option>
-            </select>
-          </div>
-
-          <div className="survey-txt">
-            <label className="survey-txt">Would you say that you are a: </label>
+          <div className="question-container">
+            <div className="survey-txt">
+              <label>How did you hear about us?</label>
+            </div>
+            <div className="select">
+              <select
+                id="select"
+                value={hear}
+                onChange={(e) => setHear(e.target.value)}
+              >
+                <option value="Linkedin">Linkedin</option>
+                <option value="Gumtree">Gumtree</option>
+                <option value="Newspaper">Newspaper</option>
+              </select>
+            </div>
           </div>
 
-          <div className="select">
-            <select
-              id="select"
-              value={pet}
-              onChange={(e) => setPet(e.target.value)}
-            >
-              <option value="Dog person">Dog Person</option>
-              <option value="Cat person">Cat Person</option>
-            </select>
-          </div>
+          <div className="question-container">
+            <div className="survey-txt">
+              <label className="survey-txt">
+                Would you say that you are a:
+              </label>
+            </div>
 
-          <div className="survey-txt">
-            <label className="survey-txt">Are you a vegetarian ? </label>
+            <div className="select">
+              <select
+                id="select"
+                value={pet}
+                onChange={(e) => setPet(e.target.value)}
+              >
+                <option value="Dog person">Dog Person</option>
+                <option value="Cat person">Cat Person</option>
+              </select>
+            </div>
           </div>
+          <div className="question-container">
+            <div className="survey-txt">
+              <label className="survey-txt">Are you a vegetarian ? </label>
+            </div>
 
-          <div className="select">
-            <select
-              id="select"
-              value={food}
-              onChange={(e) => setFood(e.target.value)}
-            >
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>
+            <div className="select">
+              <select
+                id="select"
+                value={food}
+                onChange={(e) => setFood(e.target.value)}
+              >
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
           </div>
         </div>
 
