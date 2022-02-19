@@ -5,7 +5,7 @@ const ProgressNav = ({ activeIt }) => {
   const details = useContext(FormContext);
 
   return (
-    <div className="who-are-you">
+    <div>
       {details.step1.active && (
         <div className="nav">
           <div className="progress">

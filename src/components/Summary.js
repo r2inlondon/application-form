@@ -6,7 +6,9 @@ const Summary = (props) => {
 
   return (
     <div className="summary">
-      <p>To amend your answers click on the above progress bar</p>
+      <p className="summary-instructions">
+        Click on the above progress bar to amend your info.
+      </p>
       <p className="summary-title">{details.step1.section}</p>
       <div className="black-line"></div>
       <div className="personal-details">
