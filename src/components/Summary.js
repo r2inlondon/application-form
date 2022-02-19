@@ -43,13 +43,11 @@ const Summary = (props) => {
       <div className="address">
         <div className="inputs-container">
           <div className="two-inputs">
-            <p className="field-title">1st line</p>
             <p>{details.step2.firstLine}</p>
           </div>
           {details.step2.firstLine && (
             <div>
               <div className="two-inputs">
-                <p className="field-title">2nd line</p>
                 <p>{details.step2.secondLine}</p>
               </div>
             </div>
@@ -57,14 +55,12 @@ const Summary = (props) => {
         </div>
         <div className="inputs-container">
           <div className="two-inputs">
-            <p className="field-title">PostCode</p>
             <p>{details.step2.postcode}</p>
           </div>
           <div className="two-inputs">
-            <p className="field-title">City</p> <p>{details.step2.city}</p>
+            <p>{details.step2.city}</p>
           </div>
           <div className="two-inputs">
-            <p className="field-title">Country</p>
             <p>{details.step2.country}</p>
           </div>
         </div>
