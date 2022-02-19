@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import FormContext from "./FormContext";
+import "animate.css";
 
 const Summary = (props) => {
   const details = useContext(FormContext);
 
   return (
     <div className="summary">
-      <p className="summary-instructions">
+      <p className="summary-instructions animate__animated animate__shakeY animate__delay-1s">
         Click on the above progress bar to amend your info.
       </p>
       <p className="summary-title">{details.step1.section}</p>
