@@ -12,10 +12,10 @@ const AddressDetails = (props) => {
     details.step2.secondLine ? details.step2.secondLine : ""
   );
   const [city, setCity] = useState(
-    details.step2.city ? details.step2.city : ""
+    details.step2.city ? details.step2.city : "London"
   );
   const [country, setCountry] = useState(
-    details.step2.country ? details.step2.country : ""
+    details.step2.country ? details.step2.country : "United Kingdom"
   );
   const [postcode, setPostcode] = useState(
     details.step2.postcode ? details.step2.postcode : ""

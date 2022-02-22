@@ -7,7 +7,7 @@ const Summary = (props) => {
 
   return (
     <div className="summary">
-      <p className="summary-instructions animate__animated animate__shakeY animate__delay-1s">
+      <p className="summary-instructions animate__animated animate__shakeX animate__delay-1s">
         Click on the above progress bar to amend your info.
       </p>
       <p className="summary-title">{details.step1.section}</p>

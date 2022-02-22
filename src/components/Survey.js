@@ -20,7 +20,7 @@ const Survey = (props) => {
   };
 
   return (
-    <div className="about-us">
+    <div className="survey">
       <form onSubmit={onSubmit}>
         <div className="options-container">
           <div className="question-container">
