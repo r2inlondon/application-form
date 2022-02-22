@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import FormContext from "./FormContext";
 
-const AboutUs = (props) => {
+const Survey = (props) => {
   const details = useContext(FormContext);
   const [hear, setHear] = useState(
     details.step3.hear ? details.step3.hear : "Gumtree"
@@ -84,4 +84,4 @@ const AboutUs = (props) => {
   );
 };
 
-export default AboutUs;
+export default Survey;

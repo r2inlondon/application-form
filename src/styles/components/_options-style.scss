@@ -11,7 +11,8 @@ select {
   appearance: none;
   background-color: transparent;
   border: none;
-  padding: 0 1em 0 0;
+  // padding: 0 1em 0 0;
+  height: 36px;
   margin: 0;
   width: 100%;
   font-family: inherit;
@@ -37,6 +38,7 @@ select {
   grid-template-areas: "select";
   align-items: center;
   position: relative;
+  margin: 1rem 0;
 
   select,
   &::after {
@@ -44,11 +46,11 @@ select {
   }
 
   min-width: 15ch;
-  max-width: 30ch;
+  // max-width: 30ch;
 
   border: $black-line;
   border-radius: 5px;
-  padding: 0.25em 0.5em;
+  padding: 0 0.5em;
 
   font-size: $font-size-regular;
   cursor: pointer;

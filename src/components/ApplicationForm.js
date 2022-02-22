@@ -4,7 +4,7 @@ import TheStart from "./TheStart";
 import ProgressNav from "./ProgressNav";
 import PersonalDetails from "./PersonalDetails";
 import AddressDetails from "./AddressDetails";
-import AboutUs from "./AboutUs";
+import Survey from "./Survey";
 import Summary from "./Summary";
 import TheEnd from "./TheEnd";
 import { expandBackground } from "../js-functions/transparent-bg";
@@ -123,7 +123,7 @@ const ApplicationForm = () => {
         <div className="components-container">
           {progress[1] && <PersonalDetails setDetails={step1} />}
           {progress[2] && <AddressDetails setAddressDetails={step2} />}
-          {progress[3] && <AboutUs setAboutUs={step3} />}
+          {progress[3] && <Survey setAboutUs={step3} />}
           {progress[4] && <Summary endForm={step4} />}
         </div>
       </FormContext.Provider>
