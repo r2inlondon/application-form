@@ -58,8 +58,7 @@ const AddressDetails = (props) => {
           value={secondLine}
           onChange={(e) => setSecondLine(e.target.value)}
           ype="text"
-        />
-        <br />
+        />        
         <div className="inputs-container">
           <div className="two-inputs">                
             <label className="survey-txt">City </label>            
