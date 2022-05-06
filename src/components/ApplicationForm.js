@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import FormContext, { initialState, sampleState } from "./FormContext";
 import TheStart from "./TheStart";
 import ProgressNav from "./ProgressNav";

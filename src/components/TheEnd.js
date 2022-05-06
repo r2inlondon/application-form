@@ -1,5 +1,3 @@
-import React from "react";
-
 const TheEnd = () => (
   <div className="the-start">
     <div className="start-txt">
