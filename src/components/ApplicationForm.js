@@ -12,18 +12,15 @@ import { expandBackground } from "../js-functions/transparent-bg";
 const ApplicationForm = () => {
   const [details, setDetails] = useState(initialState);
 
-  const [progress, setProgress] = useState([
-    true,
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
+  // const [progress, setProgress] = useState([true]);
 
   const step0 = (e) => {
     expandBackground();
     setDetails((prevState) => ({
+      step0: {
+        completed: true,
+        active: false,
+      },
       step1: {
         ...prevState.step1,
         active: true,
@@ -31,15 +28,17 @@ const ApplicationForm = () => {
       step2: { ...prevState.step2 },
       step3: { ...prevState.step3 },
       step4: { ...prevState.step4 },
+      step5: { ...prevState.step5 },
     }));
 
-    setProgress([false, true, false, false, false, false]);
+    // moveForward();
   };
 
   const step1 = (info) => {
     const { firstName, lastName, gender, mobile, email } = info;
 
     setDetails((prevState) => ({
+      step0: { ...prevState.step0 },
       step1: {
         ...prevState.step1,
         completed: true,
@@ -48,23 +47,25 @@ const ApplicationForm = () => {
         gender,
         mobile,
         email,
+        active: false,
       },
       step2: { ...prevState.step2, active: true },
       step3: { ...prevState.step3 },
       step4: { ...prevState.step4 },
+      step5: { ...prevState.step5 },
     }));
-
-    setProgress([false, false, true, false, false, false]);
   };
 
   const step2 = (info) => {
     const { firstLine, secondLine, city, country, postcode } = info;
 
     setDetails((prevState) => ({
+      step0: { ...prevState.step0 },
       step1: { ...prevState.step1 },
       step2: {
         ...prevState.step2,
         completed: true,
+        active: false,
         firstLine,
         secondLine,
         city,
@@ -73,58 +74,67 @@ const ApplicationForm = () => {
       },
       step3: { ...prevState.step3, active: true },
       step4: { ...prevState.step4 },
+      step5: { ...prevState.step5 },
     }));
-
-    setProgress([false, false, false, true, false, false]);
   };
 
   const step3 = (info) => {
     const { hear, pet, food } = info;
 
     setDetails((prevState) => ({
+      step0: { ...prevState.step0 },
       step1: { ...prevState.step1 },
       step2: { ...prevState.step2 },
       step3: {
         ...prevState.step3,
         completed: true,
+        active: false,
         hear,
         pet,
         food,
       },
       step4: { ...prevState.step4, active: true },
+      step5: { ...prevState.step5 },
     }));
-    setProgress([false, false, false, false, true, false]);
   };
 
   const step4 = (e) => {
     expandBackground();
-    setProgress([false, false, false, false, false, true]);
+
     setDetails(initialState);
   };
 
-  const activeIt = (e) => {
-    const toActive = e.target.attributes.id.value;
+  const showStep = (e) => {
+    const getStepKey = e.target.getAttribute("data-step-num");
 
-    const show = [false, false, false, false];
+    const stepNumber = `step${getStepKey}`;
 
-    show[toActive] = true;
+    const getAllSteps = Object.keys(details);
 
-    setProgress(show);
+    getAllSteps.forEach((step) => {
+      details[step].active = false;
+    });
 
+    details[stepNumber].active = true;
+
+    // console.log(details[stepNumber].section);
+    // const show = [false, false, false, false];
+    // show[getStepKey] = true;
+    // setProgress(show);
     e.preventDefault();
   };
 
   return (
     <div className="bg-small">
-      {progress[0] && <TheStart TheStart={step0} />}
-      {progress[5] && <TheEnd />}
+      {details.step0.active && <TheStart TheStart={step0} />}
+      {details.step5.active && <TheEnd />}
       <FormContext.Provider value={details}>
-        <ProgressNav activeIt={activeIt} />
+        <ProgressNav showStep={showStep} />
         <div className="components-container">
-          {progress[1] && <PersonalDetails setDetails={step1} />}
-          {progress[2] && <AddressDetails setAddressDetails={step2} />}
-          {progress[3] && <Survey setAboutUs={step3} />}
-          {progress[4] && <Summary endForm={step4} />}
+          {details.step1.active && <PersonalDetails setDetails={step1} />}
+          {details.step2.active && <AddressDetails setAddressDetails={step2} />}
+          {details.step3.active && <Survey setAboutUs={step3} />}
+          {details.step4.active && <Summary endForm={step4} />}
         </div>
       </FormContext.Provider>
     </div>
