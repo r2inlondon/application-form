@@ -2,6 +2,19 @@ import { createContext } from "react";
 
 const FormContext = createContext();
 
+export const initialStateShort = {
+  step0: {
+    section: "Start",
+    active: true,
+    completed: false,
+  },
+  step5: {
+    section: "End",
+    active: false,
+    completed: false,
+  },
+};
+
 export const initialState = {
   step0: {
     section: "Start",

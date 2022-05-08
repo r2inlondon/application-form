@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FormContext, { initialState, sampleState } from "./FormContext";
+import FormContext, { initialStateShort, sampleState } from "./FormContext";
 import TheStart from "./TheStart";
 import ProgressNav from "./ProgressNav";
 import PersonalDetails from "./PersonalDetails";
@@ -10,13 +10,27 @@ import TheEnd from "./TheEnd";
 import { expandBackground } from "../js-functions/transparent-bg";
 
 const ApplicationForm = () => {
-  const [details, setDetails] = useState(initialState);
+  const [details, setDetails] = useState(initialStateShort);
 
-  // const [progress, setProgress] = useState([true]);
+  const showStep = (e) => {
+    const getStepKey = e.target.getAttribute("data-step-num");
+    const copyDetails = { ...details };
+    const getStepsKeys = Object.keys(copyDetails);
+
+    getStepsKeys.forEach((step) => {
+      copyDetails[step].active = false;
+    });
+
+    copyDetails[`step${getStepKey}`].active = true;
+    setDetails(copyDetails);
+
+    e.preventDefault();
+  };
 
   const step0 = (e) => {
     expandBackground();
     setDetails((prevState) => ({
+      ...prevState,
       step0: {
         completed: true,
         active: false,
@@ -24,21 +38,16 @@ const ApplicationForm = () => {
       step1: {
         ...prevState.step1,
         active: true,
+        section: "Personal Details",
       },
-      step2: { ...prevState.step2 },
-      step3: { ...prevState.step3 },
-      step4: { ...prevState.step4 },
-      step5: { ...prevState.step5 },
     }));
-
-    // moveForward();
   };
 
   const step1 = (info) => {
     const { firstName, lastName, gender, mobile, email } = info;
 
     setDetails((prevState) => ({
-      step0: { ...prevState.step0 },
+      ...prevState,
       step1: {
         ...prevState.step1,
         completed: true,
@@ -49,10 +58,7 @@ const ApplicationForm = () => {
         email,
         active: false,
       },
-      step2: { ...prevState.step2, active: true },
-      step3: { ...prevState.step3 },
-      step4: { ...prevState.step4 },
-      step5: { ...prevState.step5 },
+      step2: { ...prevState.step2, active: true, section: "Home Address" },
     }));
   };
 
@@ -60,8 +66,7 @@ const ApplicationForm = () => {
     const { firstLine, secondLine, city, country, postcode } = info;
 
     setDetails((prevState) => ({
-      step0: { ...prevState.step0 },
-      step1: { ...prevState.step1 },
+      ...prevState,
       step2: {
         ...prevState.step2,
         completed: true,
@@ -72,9 +77,7 @@ const ApplicationForm = () => {
         country,
         postcode,
       },
-      step3: { ...prevState.step3, active: true },
-      step4: { ...prevState.step4 },
-      step5: { ...prevState.step5 },
+      step3: { ...prevState.step3, active: true, section: "Survey" },
     }));
   };
 
@@ -82,9 +85,7 @@ const ApplicationForm = () => {
     const { hear, pet, food } = info;
 
     setDetails((prevState) => ({
-      step0: { ...prevState.step0 },
-      step1: { ...prevState.step1 },
-      step2: { ...prevState.step2 },
+      ...prevState,
       step3: {
         ...prevState.step3,
         completed: true,
@@ -93,35 +94,19 @@ const ApplicationForm = () => {
         pet,
         food,
       },
-      step4: { ...prevState.step4, active: true },
-      step5: { ...prevState.step5 },
+      step4: {
+        ...prevState.step4,
+        active: true,
+        section: "Summary",
+        completed: true,
+      },
     }));
   };
 
   const step4 = (e) => {
     expandBackground();
 
-    setDetails(initialState);
-  };
-
-  const showStep = (e) => {
-    const getStepKey = e.target.getAttribute("data-step-num");
-
-    const stepNumber = `step${getStepKey}`;
-
-    const getAllSteps = Object.keys(details);
-
-    getAllSteps.forEach((step) => {
-      details[step].active = false;
-    });
-
-    details[stepNumber].active = true;
-
-    // console.log(details[stepNumber].section);
-    // const show = [false, false, false, false];
-    // show[getStepKey] = true;
-    // setProgress(show);
-    e.preventDefault();
+    setDetails(initialStateShort);
   };
 
   return (
@@ -131,10 +116,14 @@ const ApplicationForm = () => {
       <FormContext.Provider value={details}>
         <ProgressNav showStep={showStep} />
         <div className="components-container">
-          {details.step1.active && <PersonalDetails setDetails={step1} />}
-          {details.step2.active && <AddressDetails setAddressDetails={step2} />}
-          {details.step3.active && <Survey setAboutUs={step3} />}
-          {details.step4.active && <Summary endForm={step4} />}
+          {details?.step1?.active ? <PersonalDetails setDetails={step1} /> : ""}
+          {details?.step2?.active ? (
+            <AddressDetails setAddressDetails={step2} />
+          ) : (
+            ""
+          )}
+          {details?.step3?.active ? <Survey setAboutUs={step3} /> : ""}
+          {details?.step4?.active ? <Summary endForm={step4} /> : ""}
         </div>
       </FormContext.Provider>
     </div>
