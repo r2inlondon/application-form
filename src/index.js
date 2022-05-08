@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+// import App from "./App";
+import ApplicationForm from "./components/ApplicationForm";
+import "./styles/styles.scss";
+
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApplicationForm />
   </React.StrictMode>,
   document.getElementById("root")
 );
