@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import FormContext from "./FormContext";
+import { FormContext } from "./ApplicationForm";
 import "animate.css";
 
 const Summary = (props) => {

@@ -1,5 +1,5 @@
-import react, { useState, useContext } from "react";
-import FormContext from "./FormContext";
+import { useState, useContext } from "react";
+import { FormContext } from "./ApplicationForm";
 import { countryList } from "../data-misc/countryList";
 import { cities } from "../data-misc/cities";
 
@@ -58,10 +58,10 @@ const AddressDetails = (props) => {
           value={secondLine}
           onChange={(e) => setSecondLine(e.target.value)}
           ype="text"
-        />        
+        />
         <div className="inputs-container">
-          <div className="two-inputs">                
-            <label className="survey-txt">City </label>            
+          <div className="two-inputs">
+            <label className="survey-txt">City </label>
             <br />
             <div className="select">
               <select
@@ -69,9 +69,13 @@ const AddressDetails = (props) => {
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
               >
-               {cities.map((element, index) => {
-                 return <option key={index} value={element}>{element}</option>
-               })}
+                {cities.map((element, index) => {
+                  return (
+                    <option key={index} value={element}>
+                      {element}
+                    </option>
+                  );
+                })}
               </select>
             </div>
             <br />
@@ -90,24 +94,25 @@ const AddressDetails = (props) => {
               ype="text"
             />
           </div>
-        </div>        
-      
-            
-              <label className="survey-txt">Country </label>
-            
+        </div>
 
-            <div className="select">
-              <select
-                id="select"
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-              >
-               {countryList.map((element, index) => {
-                 return <option key={index} value={element}>{element}</option>
-               })}
-              </select>
-            </div>
-      
+        <label className="survey-txt">Country </label>
+
+        <div className="select">
+          <select
+            id="select"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+          >
+            {countryList.map((element, index) => {
+              return (
+                <option key={index} value={element}>
+                  {element}
+                </option>
+              );
+            })}
+          </select>
+        </div>
 
         <div className="next">
           <input className="the-button" type="submit" value="NEXT" />

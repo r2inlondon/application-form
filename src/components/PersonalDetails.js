@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import FormContext from "./FormContext";
+import { FormContext } from "./ApplicationForm";
 
 const PersonalDetails = (props) => {
   const details = useContext(FormContext);

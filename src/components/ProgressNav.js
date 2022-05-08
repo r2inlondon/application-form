@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import FormContext from "./FormContext";
+import { FormContext } from "./ApplicationForm";
 
 const ProgressNav = ({ showStep }) => {
   const details = useContext(FormContext);
 
   return (
     <div>
-      {details.step0.completed && (
+      {details?.step0?.completed && (
         <div className="nav">
           <div className="progress">
             <div className="steps">

@@ -1,5 +1,4 @@
-import { useState } from "react";
-import FormContext, { initialStateShort, sampleState } from "./FormContext";
+import { useState, createContext } from "react";
 import TheStart from "./TheStart";
 import ProgressNav from "./ProgressNav";
 import PersonalDetails from "./PersonalDetails";
@@ -9,8 +8,16 @@ import Summary from "./Summary";
 import TheEnd from "./TheEnd";
 import { expandBackground } from "../js-functions/transparent-bg";
 
+export const FormContext = createContext();
+
 const ApplicationForm = () => {
-  const [details, setDetails] = useState(initialStateShort);
+  const [details, setDetails] = useState({
+    step0: {
+      section: "Start",
+      active: true,
+      completed: false,
+    },
+  });
 
   const showStep = (e) => {
     const getStepKey = e.target.getAttribute("data-step-num");
@@ -106,13 +113,18 @@ const ApplicationForm = () => {
   const step4 = (e) => {
     expandBackground();
 
-    setDetails(initialStateShort);
+    setDetails({
+      step5: {
+        section: "End",
+        active: true,
+      },
+    });
   };
 
   return (
     <div className="bg-small">
-      {details.step0.active && <TheStart TheStart={step0} />}
-      {details.step5.active && <TheEnd />}
+      {details?.step0?.active ? <TheStart TheStart={step0} /> : ""}
+      {details?.step5?.active && <TheEnd />}
       <FormContext.Provider value={details}>
         <ProgressNav showStep={showStep} />
         <div className="components-container">
