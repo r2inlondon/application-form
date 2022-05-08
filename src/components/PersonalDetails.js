@@ -105,7 +105,7 @@ const PersonalDetails = (props) => {
         />
         <br />
         <div className="next">
-          <input type="submit" value="NEXT" className="the-button" />
+          <input type="submit" value="SAVE" className="the-button" />
         </div>
       </form>
     </div>

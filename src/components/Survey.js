@@ -77,7 +77,7 @@ const Survey = (props) => {
         </div>
 
         <div className="next">
-          <input className="the-button" type="submit" value="NEXT"></input>
+          <input className="the-button" type="submit" value="SAVE"></input>
         </div>
       </form>
     </div>

@@ -18,21 +18,6 @@ const ApplicationForm = () => {
     },
   });
 
-  const showStep = (e) => {
-    const stepKey = e.target.getAttribute("data-step-num");
-    const copyDetails = { ...details };
-    const getStepsKeys = Object.keys(copyDetails);
-
-    getStepsKeys.forEach((step) => {
-      copyDetails[step].active = false;
-    });
-
-    copyDetails[`step${stepKey}`].active = true;
-    setDetails(copyDetails);
-
-    e.preventDefault();
-  };
-
   const step0 = {
     text: "Application Form Coded With React",
     action: (e) => {
@@ -125,6 +110,21 @@ const ApplicationForm = () => {
 
   const step5 = {
     text: "Application Completed!",
+  };
+
+  const showStep = (e) => {
+    const stepKey = e.target.getAttribute("data-step-num");
+    const copyDetails = { ...details };
+    const getStepsKeys = Object.keys(copyDetails);
+
+    getStepsKeys.forEach((step) => {
+      copyDetails[step].active = false;
+    });
+
+    copyDetails[`step${stepKey}`].active = true;
+    setDetails(copyDetails);
+
+    e.preventDefault();
   };
 
   return (

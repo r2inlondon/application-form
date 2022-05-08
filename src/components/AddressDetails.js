@@ -115,7 +115,7 @@ const AddressDetails = (props) => {
         </div>
 
         <div className="next">
-          <input className="the-button" type="submit" value="NEXT" />
+          <input className="the-button" type="submit" value="SAVE" />
         </div>
       </form>
     </div>
