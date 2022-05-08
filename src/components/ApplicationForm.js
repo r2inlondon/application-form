@@ -1,11 +1,10 @@
 import { useState, createContext } from "react";
-import TheStart from "./TheStart";
+import StartEnd from "./StartEnd";
 import ProgressNav from "./ProgressNav";
 import PersonalDetails from "./PersonalDetails";
 import AddressDetails from "./AddressDetails";
 import Survey from "./Survey";
 import Summary from "./Summary";
-import TheEnd from "./TheEnd";
 import { expandBackground } from "../js-functions/transparent-bg";
 
 export const FormContext = createContext();
@@ -34,20 +33,23 @@ const ApplicationForm = () => {
     e.preventDefault();
   };
 
-  const step0 = (e) => {
-    expandBackground();
-    setDetails((prevState) => ({
-      ...prevState,
-      step0: {
-        completed: true,
-        active: false,
-      },
-      step1: {
-        ...prevState.step1,
-        active: true,
-        section: "Personal Details",
-      },
-    }));
+  const step0 = {
+    text: "Application Form Coded With React",
+    action: (e) => {
+      expandBackground();
+      setDetails((prevState) => ({
+        ...prevState,
+        step0: {
+          completed: true,
+          active: false,
+        },
+        step1: {
+          ...prevState.step1,
+          active: true,
+          section: "Personal Details",
+        },
+      }));
+    },
   };
 
   const step1 = (info) => {
@@ -121,10 +123,14 @@ const ApplicationForm = () => {
     });
   };
 
+  const step5 = {
+    text: "Application Completed!",
+  };
+
   return (
     <div className="bg-small">
-      {details?.step0?.active ? <TheStart TheStart={step0} /> : ""}
-      {details?.step5?.active && <TheEnd />}
+      {details?.step0?.active ? <StartEnd handle={step0} /> : ""}
+      {details?.step5?.active && <StartEnd handle={step5} />}
       <FormContext.Provider value={details}>
         <ProgressNav showStep={showStep} />
         <div className="components-container">
