@@ -20,7 +20,7 @@ const ApplicationForm = () => {
   });
 
   const showStep = (e) => {
-    const getStepKey = e.target.getAttribute("data-step-num");
+    const stepKey = e.target.getAttribute("data-step-num");
     const copyDetails = { ...details };
     const getStepsKeys = Object.keys(copyDetails);
 
@@ -28,7 +28,7 @@ const ApplicationForm = () => {
       copyDetails[step].active = false;
     });
 
-    copyDetails[`step${getStepKey}`].active = true;
+    copyDetails[`step${stepKey}`].active = true;
     setDetails(copyDetails);
 
     e.preventDefault();
