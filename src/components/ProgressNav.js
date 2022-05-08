@@ -10,7 +10,7 @@ const ProgressNav = ({ showStep }) => {
         <div className="nav">
           <div className="progress">
             <div className="steps">
-              {details.step1.completed && (
+              {details.step1.active && (
                 <button
                   key={1}
                   data-step-num={1}
