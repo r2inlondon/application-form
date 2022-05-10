@@ -27,12 +27,13 @@
 
 .button-step {
   margin: 0;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
   background: $steps-color;
   border: none;
   border-radius: 50%;
+  z-index: 1;
   // &:hover {
   //   transition-duration: 0.3s;
   //   transform: scale(1.2);
@@ -40,12 +41,13 @@
 }
 
 .active {
+  z-index: 2;
   margin: 0;
   width: 30px;
   height: 30px;
   border: none;
   border-radius: 50%;
-
+  position: absolute;
   &::after {
     content: "";
     left: 0;

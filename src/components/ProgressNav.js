@@ -10,7 +10,7 @@ const ProgressNav = ({ showStep }) => {
         <div className="nav">
           <div className="progress">
             <div className="steps">
-              {details.step1.active && (
+              {details.step1.completed && (
                 <button
                   key={1}
                   data-step-num={1}
@@ -18,6 +18,7 @@ const ProgressNav = ({ showStep }) => {
                   onClick={showStep}
                 ></button>
               )}
+              {details.step1.active && <div className="active" />}
             </div>
             <div className="line"></div>
             <div className="steps">
@@ -29,6 +30,7 @@ const ProgressNav = ({ showStep }) => {
                   onClick={showStep}
                 ></button>
               )}
+              {details?.step2?.active && <div className="active" />}
             </div>
             <div className="line"></div>
             <div className="steps">
@@ -40,6 +42,7 @@ const ProgressNav = ({ showStep }) => {
                   onClick={showStep}
                 ></button>
               )}
+              {details?.step3?.active && <div className="active" />}
             </div>
             <div className="line"></div>
             <div className="steps">
@@ -51,6 +54,7 @@ const ProgressNav = ({ showStep }) => {
                   onClick={showStep}
                 ></button>
               )}
+              {details?.step4?.active && <div className="active" />}
             </div>
           </div>
           <div className="progress-txt-container">
